@@ -68,7 +68,7 @@ if uzivatelske_jmeno in uzivatele and uzivatele[uzivatelske_jmeno] == heslo:
      # Výběr textu
     volba_textu = input(f"Vyber si číslo textu mezi 1 a {pocet_textu}, který chceš analyzovat:  ")
     
-    # Kontrola volby textu
+    # Kontrola volby textu a případné ukončení programu
     if not volba_textu.isdigit() or int(volba_textu) not in range(1,pocet_textu + 1):
         print("Zadal jste vstup, který nebyl ve volbě. Ukončuji program ..")
         exit()
@@ -123,11 +123,11 @@ if uzivatelske_jmeno in uzivatele and uzivatele[uzivatelske_jmeno] == heslo:
     print(odelovac)
     
     # Výpis grafu četnosti délek slov
-    print("Délka| Výskyty          | Počet")
+    print("Délka| Výskyty           | Počet")
     print(odelovac)
     for delka in sorted(cetnosti):
         pocet = cetnosti[delka]
-        print(f"{delka:<5}| {'*' * pocet:<17}| {pocet:<3}")
+        print(f"{delka:<5}| {'*' * pocet:<18}| {pocet:<5}")
 
 # Ukončení programu v případě neplatného uživatelského jména nebo hesla
 else :
